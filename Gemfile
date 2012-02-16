@@ -18,6 +18,18 @@ end
 
 gem 'jquery-rails'
 
+<<<<<<< HEAD
+=======
+group :development do
+  gem 'rspec-rails', '2.6.1'
+end
+
+group :test do
+  gem 'rspec-rails', '2.6.1'
+  gem 'webrat', '0.7.1'
+end
+
+>>>>>>> 9b8c3c65153097d1c7894f5a1bb22d8f43ad5183
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -30,7 +42,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+<<<<<<< HEAD
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+=======
+>>>>>>> 9b8c3c65153097d1c7894f5a1bb22d8f43ad5183
