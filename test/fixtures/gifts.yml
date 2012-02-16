@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  text: MyText
+  booked: 1
+  list: 
+
+two:
+  text: MyText
+  booked: 1
+  list: 

@@ -1,0 +1,33 @@
+
+<div class="main_bl">
+	<div class="int_main">
+		<div class="logo">
+			<% tlogo=image_tag("logo.gif", :alt => "Привет, подарок") %>
+			<%= link_to tlogo, root_path %>
+		</div>
+
+		<div class="ab">
+			Все очень просто. У вас намечается праздник?<br />
+Создайте список подарков, разошлите ссылку гостям<br />
+и получайте правильные подарки. Без регистрации!
+		</div>
+
+		<div class="mklist">
+			<div class="int">
+				<div class="hfp">
+					Текст перед списком
+				</div>
+
+				<div class="dfp">
+					Например, время и место праздника, необязательное поле
+				</div>
+				
+				<%= show_flash %>
+				<%= render 'layouts/form_list_gifts'%>
+				
+			</div>
+		</div>
+		<%= render 'layouts/footer'%>
+	</div>	
+</div>
+

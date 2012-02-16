@@ -1,0 +1,49 @@
+<%= form_tag(:controller => "Lists", :action => "new") %>
+
+	<div class="wrap_txarea">
+		<%= text_area_tag(:list_text) %>
+	</div>
+
+	<div class="hsp">
+		Список подарков
+	</div>
+
+	<div class="wrap_litem">					
+		<div class="litem">
+			<table>
+				<tr>
+					<td>
+						<div class="item_inp">
+							<%= text_field_tag("text[]") %>
+						</div>
+					</td>
+					<td>
+						<div class="del_but"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="litem">
+			<table>
+				<tr>
+					<td>
+						<div class="item_inp">
+							<%= text_field_tag("text[]") %>
+						</div>
+					</td>
+					<td>
+						<div class="del_but"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+
+	<span id="addp" class="addp">Добавить еще полей для подарков?</span>
+
+	<div class="sub">
+		<%= submit_tag("Сохранить лист") %>
+	</div>
+	

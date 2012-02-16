@@ -1,0 +1,52 @@
+<%= 
+	#@url
+	#debug(@ch)
+	@ch.inspect
+%>
+<div class="main_bl">
+	<div class="int_main">
+		<div class="int-logo">
+			<% tlogo=image_tag("in-logo.gif", :alt => "Привет, подарок") %>
+		</div>
+
+		<div class="ab">
+			Ссылка на ваш лист подарков готова
+		</div>
+
+
+		<div class="mklist">
+			<div class="int">
+				<div class="list-link">www.hellogift.ru/<%= flash[:new_list_url] %></div>
+
+				<div class="link-info">
+					Скопируйте ее и разошлите своим гостям по электронной почте<br />
+или с помощью социальных сетей.
+				</div>
+			</div>
+		</div>
+
+		<div class="getkbl">
+			<div class="int">
+
+				<div class="keyinf">
+				Если хотите, введите ваш e-mail и мы вышлем вам ключ<br />
+				для редактирования списка, в противном случае список<br />
+				будет нередактируемым:
+				</div>
+
+				<div class="inp">
+					<input type="text">
+				</div>
+
+				<div class="sub">
+					<input type="submit" value="Получить ключ" />
+				</div>
+			</div>
+		</div>
+
+
+		<div class="cp">
+			Сайт сделан в <a href="http://glstr.ru" target="_blank">студии «Главная страница»</a>
+		</div>
+	</div>	
+</div>
