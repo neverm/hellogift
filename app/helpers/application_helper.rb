@@ -13,6 +13,6 @@ module ApplicationHelper
 		if flash[:notice]
 	    	content_tag(:div, flash[:notice], :class => 'notice')
 	    end	
-	 end
+	end
 		
 end

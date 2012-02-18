@@ -2,31 +2,43 @@
 class ListsController < ApplicationController
 	def new
 		@title="Привет, подарок"
-		#Генерим урл
-		url=('a'..'z').to_a.shuffle[0..14].join
+				
+		if params[:text].nil? && session[:text].nil?
+			flash[:notice]="Сначала создайте список подарков!"	
+			redirect_to(root_path)	
+				
+		elsif !params[:text].nil? && session[:text].nil?
+			session[:list_text]=params[:list_text]
+			session[:text]=params[:text]
 
-		check_bl_gifts=params[:text].join.blank?
+			redirect_to(new_list_path)
 
-		if !check_bl_gifts
-			#Создаем и сохраняем лист подарков
-			l=List.new(:text => params[:list_text], :url => url);
-			l.save
+		elsif params[:text].nil? && !session[:text].nil?	 
+			if !session[:text].join.blank?
+				url=('a'..'z').to_a.shuffle[0..14].join
+				@l=List.new(:text => session[:list_text], :url => url)
+				@l.save
 
-			#Создаем подарки	
-			params[:text].each do |text|
-				if !text.blank? 
-					l.gifts.create(:text => text) 
-				end		
-			end
-			
-			flash[:new_list_url]=url;
-			redirect_to(new_list_path) 
-			 
-		else
-			flash[:notice]="Должен быть добавлен хотя бы один подарок!"	
-			redirect_to(root_path)	 
+				session[:text].each do |text|
+					@l.gifts.create(:text => text)
+				end
+				session[:list_url]=url	
+
+				session[:text] = nil
+				session[:list_text] = nil
+
+			else
+				flash[:notice]="Должен быть добавлен хотя бы один подарок!"	
+				redirect_to(root_path)		
+			end	
+					
 		end	
+	end	
 
+	def set_user_email
+		if !params[:list][:user_email].blank?
+			
+		end	
 	end	
 
 end

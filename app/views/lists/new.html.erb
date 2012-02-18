@@ -1,12 +1,13 @@
 <%= 
 	#@url
 	#debug(@ch)
-	@ch.inspect
+	
 %>
 <div class="main_bl">
 	<div class="int_main">
 		<div class="int-logo">
-			<% tlogo=image_tag("in-logo.gif", :alt => "Привет, подарок") %>
+			<% tlogo=image_tag("int-logo.gif", :alt => "Привет, подарок") %>
+			<%= link_to tlogo, root_path %>
 		</div>
 
 		<div class="ab">
@@ -16,7 +17,7 @@
 
 		<div class="mklist">
 			<div class="int">
-				<div class="list-link">www.hellogift.ru/<%= flash[:new_list_url] %></div>
+				<div class="list-link"><%=request.domain+"/"+session[:list_url] %></div>
 
 				<div class="link-info">
 					Скопируйте ее и разошлите своим гостям по электронной почте<br />
@@ -33,14 +34,15 @@
 				для редактирования списка, в противном случае список<br />
 				будет нередактируемым:
 				</div>
-
+				<%= form_for @l, :remote => false, :url => {:action => "set_user_email"} do |f| %>
 				<div class="inp">
-					<input type="text">
+					<%= f.text_field :user_email %>
 				</div>
 
 				<div class="sub">
-					<input type="submit" value="Получить ключ" />
+					<%= f.submit "Получить ключ" %>
 				</div>
+				<% end %>
 			</div>
 		</div>
 
