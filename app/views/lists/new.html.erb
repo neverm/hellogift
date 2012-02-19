@@ -28,21 +28,23 @@
 
 		<div class="getkbl">
 			<div class="int">
+				
+				
+					<div class="keyinf" id="user-email">
+					Если хотите, введите ваш e-mail и мы вышлем вам ключ<br />
+					для редактирования списка, в противном случае список<br />
+					будет нередактируемым:
+					</div>
+					<%= form_for @l, :remote => true, :url => {:action => "set_user_email"} do |f| %>
+					<div class="inp">
+						<%= f.text_field :user_email %>
+					</div>
 
-				<div class="keyinf">
-				Если хотите, введите ваш e-mail и мы вышлем вам ключ<br />
-				для редактирования списка, в противном случае список<br />
-				будет нередактируемым:
-				</div>
-				<%= form_for @l, :remote => false, :url => {:action => "set_user_email"} do |f| %>
-				<div class="inp">
-					<%= f.text_field :user_email %>
-				</div>
-
-				<div class="sub">
-					<%= f.submit "Получить ключ" %>
-				</div>
-				<% end %>
+					<div class="sub">
+						<%= f.submit "Получить ключ" %>
+					</div>
+					<% end %>
+					
 			</div>
 		</div>
 

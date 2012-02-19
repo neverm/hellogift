@@ -37,8 +37,15 @@ class ListsController < ApplicationController
 
 	def set_user_email
 		if !params[:list][:user_email].blank?
-			
+			@l.update_attribute(:user_email => params[:list][:user_email])
+			flash[:notice]="Оk"
+		else
+			flash[:notice]="Error"	
 		end	
+
+		respond_to do |format|
+		   format.js 
+		end
 	end	
 
 end
