@@ -1,7 +1,7 @@
-<%= form_tag(:controller => "Lists", :action => "new") %>
+<%= form_for(List.new) do |f| %>
 
 	<div class="wrap_txarea">
-		<%= text_area_tag(:list_text) %>
+		<%= f.text_area :text %>
 	</div>
 
 	<div class="hsp">
@@ -14,7 +14,7 @@
 				<tr>
 					<td>
 						<div class="item_inp">
-							<%= text_field_tag("text[]") %>
+							<%= f.text_field :gift :text %>
 						</div>
 					</td>
 					<td>
@@ -29,7 +29,7 @@
 				<tr>
 					<td>
 						<div class="item_inp">
-							<%= text_field_tag("text[]") %>
+							<%= f.text_field :gift :text %>
 						</div>
 					</td>
 					<td>
@@ -44,6 +44,7 @@
 	<span id="addp" class="addp">Добавить еще полей для подарков?</span>
 
 	<div class="sub">
-		<%= submit_tag("Сохранить лист") %>
+		<%= f.submit("Сохранить лист") %>
 	</div>
+	<% end %>
 	

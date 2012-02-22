@@ -35,7 +35,7 @@
 					для редактирования списка, в противном случае список<br />
 					будет нередактируемым:
 					</div>
-					<%= form_for @l, :remote => true, :url => {:action => "set_user_email"} do |f| %>
+					<%= form_for @list, :remote => true, :url => {:action => "set_user_email"} do |f| %>
 					<div class="inp">
 						<%= f.text_field :user_email %>
 					</div>
