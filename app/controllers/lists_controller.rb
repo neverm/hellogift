@@ -2,7 +2,7 @@
 class ListsController < ApplicationController
 	def create
 		@title="Привет, подарок"
-				
+		@p=params		
 		
 	end	
 

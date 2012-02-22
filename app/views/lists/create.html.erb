@@ -1,6 +1,6 @@
 <%= 
 	#@url
-	#debug(@ch)
+	debug(@p)
 	
 %>
 <div class="main_bl">
@@ -17,7 +17,7 @@
 
 		<div class="mklist">
 			<div class="int">
-				<div class="list-link"><%=request.domain+"/"+session[:list_url] %></div>
+				<div class="list-link"></div>
 
 				<div class="link-info">
 					Скопируйте ее и разошлите своим гостям по электронной почте<br />
@@ -35,15 +35,15 @@
 					для редактирования списка, в противном случае список<br />
 					будет нередактируемым:
 					</div>
-					<%= form_for @list, :remote => true, :url => {:action => "set_user_email"} do |f| %>
+
 					<div class="inp">
-						<%= f.text_field :user_email %>
+						
 					</div>
 
 					<div class="sub">
-						<%= f.submit "Получить ключ" %>
+						
 					</div>
-					<% end %>
+					
 					
 			</div>
 		</div>

@@ -7,14 +7,14 @@
 	<div class="hsp">
 		Список подарков
 	</div>
-
+<%= f.fields_for :gifts do |gfield| %>
 	<div class="wrap_litem">					
 		<div class="litem">
 			<table>
 				<tr>
 					<td>
 						<div class="item_inp">
-							<%= f.text_field :gift :text %>
+							<%= gfield.text_field :text %>
 						</div>
 					</td>
 					<td>
@@ -29,7 +29,7 @@
 				<tr>
 					<td>
 						<div class="item_inp">
-							<%= f.text_field :gift :text %>
+							<%= gfield.text_field :text %>
 						</div>
 					</td>
 					<td>
@@ -42,7 +42,7 @@
 	</div>
 
 	<span id="addp" class="addp">Добавить еще полей для подарков?</span>
-
+	<% end %>
 	<div class="sub">
 		<%= f.submit("Сохранить лист") %>
 	</div>
