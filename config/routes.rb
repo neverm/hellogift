@@ -5,5 +5,7 @@ Hellogift::Application.routes.draw do
   	resources :gifts
   end
   
+  match "/gifts/toggle-booked/:id", :to=> "Gifts#toggle_book"
+
   root :to => "Lists#new"
 end

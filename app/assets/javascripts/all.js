@@ -41,11 +41,12 @@ $(document).ready(function() {
 
 	$(".tdgif").each(function(){
 		$(this).find("span").click(function(){
-			var giftId=$(this).next("input").val();
+			giftId=$(this).next("input").val();
+			alert(giftId);
 			$.ajax({
-			  url: "test.html",
+			  url: "/gifts/toggle-booked/"+giftId+"/",
 			  success: function(){
-			    $(this).addClass("done");
+			    //$(this).addClass("done");
 			  }
 			});
 		})

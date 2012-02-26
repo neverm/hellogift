@@ -22,7 +22,6 @@ class ListsController < ApplicationController
 		@list=List.find(params[:id])
 		@list.update_attributes(params[:list])
 		flash[:em_info]="На ваш e-mail отправлена ссылка для редактирования списка подарков"
-
 		respond_to do |format|
 			format.html
 		   	format.js 

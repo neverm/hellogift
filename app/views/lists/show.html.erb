@@ -15,14 +15,23 @@
 		<div class="list">
 
 			<% @list.gifts.each do |gift| %>
-				<div class="item">
+				<% 
+					if gift.booked == 1
+						act='act'
+						lnk='Забронивано'
+					else
+						act=''
+						lnk='Я буду дарить это'
+					end 
+				%>
+				<div class="item <%= act %>">
 					<div class="int">
 						<table>
 							<tr>
 								<td><div class="nameit"><%= gift.text %></div></td>
 								<td class="tdgif">
-										<span>Я буду дарить это</span>
-										<%= hidden_field_tag gift.id %>
+										<span><%= lnk %></span>
+										<%= hidden_field_tag gift.id, gift.id %>
 								</td>
 							</tr>
 						</table>
