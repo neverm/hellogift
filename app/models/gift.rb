@@ -1,5 +1,5 @@
 class Gift < ActiveRecord::Base
-	validates :text,  :presence => true	
+	#validates :text,  :presence => true
+	validates_associated :list	
   	belongs_to :list
-  	validates_associated :list
 end

@@ -5,5 +5,5 @@ Hellogift::Application.routes.draw do
   	resources :gifts
   end
   
-  root :to => "Pages#index"
+  root :to => "Lists#new"
 end

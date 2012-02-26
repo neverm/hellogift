@@ -1,0 +1,22 @@
+<%= form_for @list do |f| %>
+	<div class="wrap_txarea">
+		<%= f.text_area :text %>
+	</div>
+
+	<div class="hsp">
+		Список подарков
+	</div>
+
+	<div class="wrap_litem">	
+	<%= f.fields_for :gifts do |builder| %>				
+		<%= render "gifts_field",  :f => builder %>
+	<% end %>
+		
+	</div>
+	<span id="addp" class="addp">Добавить еще полей для подарков?</span>
+	
+	<div class="sub">
+		<%= f.submit("Сохранить лист") %>
+	</div>
+<% end %>
+	

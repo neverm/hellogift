@@ -1,0 +1,9 @@
+<%= form_for @list, :remote => true, :format => :js  do |f| %>
+<div class="inp">
+	<%= f.text_field :user_email %> 
+</div>
+
+<div class="sub">
+	<%= f.submit "Получить ключ" %>
+</div>
+<% end %>

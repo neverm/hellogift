@@ -1,8 +1,5 @@
 class List < ActiveRecord::Base
-	attr_accessible :text, :url, :user_email
+	#attr_accessible :text, :url, :user_email
 	has_many :gifts	
-
-	def new
-		@list
-	end	
+	accepts_nested_attributes_for :gifts, :reject_if => proc { |attributes| attributes['text'].blank? }
 end
